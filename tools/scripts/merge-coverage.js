@@ -7,7 +7,7 @@ const { execSync } = require('child_process');
 const fs = require('fs-extra');
 
 const REPORTS_FOLDER = 'reports';
-const FINAL_OUTPUT_FOLDER = 'coverage';
+const FINAL_OUTPUT_FOLDER = 'combined-coverage';
 
 const { program } = require('commander');
 
@@ -25,7 +25,7 @@ program
   .option(
     '-u --unit-cov-dir <dir>',
     'Directory for unit test coverage',
-    'dist/web/test'
+    'dist/coverage'
   );
 
 program.parse();

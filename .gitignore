@@ -28,6 +28,8 @@ node_modules
 /.sass-cache
 /connect.lock
 /coverage
+/combined-coverage
+/reports
 **/.nyc_output
 /libpeerconnection.log
 npm-debug.log
