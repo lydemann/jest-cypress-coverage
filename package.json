@@ -6,7 +6,8 @@
     "start": "nx serve",
     "build": "nx build",
     "test": "nx test",
-    "coverage": "nx test --code-coverage"
+    "coverage": "nx test --code-coverage",
+    "merge-coverage": "node ./tools/scripts/merge-coverage.js"
   },
   "private": true,
   "dependencies": {
@@ -25,6 +26,7 @@
     "zone.js": "~0.13.0"
   },
   "devDependencies": {
+    "@angular-builders/custom-webpack": "^16.0.0",
     "@angular-devkit/build-angular": "~16.0.0",
     "@angular-devkit/core": "~16.0.0",
     "@angular-devkit/schematics": "~16.0.0",
@@ -36,6 +38,7 @@
     "@angular/language-service": "~16.0.0",
     "@cypress/code-coverage": "^3.10.7",
     "@cypress/webpack-dev-server": "^2.0.0",
+    "@jsdevtools/coverage-istanbul-loader": "^3.0.5",
     "@nx/cypress": "16.3.2",
     "@nx/eslint-plugin": "16.3.2",
     "@nx/jest": "16.3.2",

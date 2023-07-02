@@ -1,17 +1,10 @@
-import { TestBed } from '@angular/core/testing';
+import { appInitConfig } from '../main';
 import { AppComponent } from './app.component';
 
 describe(AppComponent.name, () => {
-  beforeEach(() => {
-    TestBed.overrideComponent(AppComponent, {
-      add: {
-        imports: [],
-        providers: [],
-      },
-    });
-  });
-
   it('renders', () => {
-    cy.mount(AppComponent);
+    cy.mount(AppComponent, {
+      providers: appInitConfig.providers,
+    });
   });
 });

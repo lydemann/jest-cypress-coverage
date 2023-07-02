@@ -10,6 +10,8 @@ if (environment.production) {
   enableProdMode();
 }
 
-bootstrapApplication(AppComponent, {
+export const appInitConfig = {
   providers: [importProvidersFrom(BrowserAnimationsModule, HttpClientModule)],
-});
+};
+
+bootstrapApplication(AppComponent, appInitConfig);

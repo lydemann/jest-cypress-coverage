@@ -7,7 +7,7 @@
   "tags": [],
   "targets": {
     "build": {
-      "executor": "@angular-devkit/build-angular:browser",
+      "executor": "@angular-builders/custom-webpack:browser",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/jest-cypress-coverage",
@@ -42,12 +42,21 @@
           "extractLicenses": false,
           "sourceMap": true,
           "namedChunks": true
+        },
+        "coverage": {
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true,
+          "vendorChunk": true,
+          "customWebpackConfig": {
+            "path": "coverage.webpack.ts"
+          }
         }
       },
       "defaultConfiguration": "production"
     },
     "serve": {
-      "executor": "@angular-devkit/build-angular:dev-server",
+      "executor": "@angular-builders/custom-webpack:dev-server",
       "configurations": {
         "production": {
           "browserTarget": "jest-cypress-coverage:build:production"
@@ -57,6 +66,12 @@
         }
       },
       "defaultConfiguration": "development"
+    },
+    "serve-coverage": {
+      "executor": "@angular-builders/custom-webpack:dev-server",
+      "options": {
+        "browserTarget": "jest-cypress-coverage:build:coverage"
+      }
     },
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
@@ -98,7 +113,7 @@
         "cypressConfig": "cypress.config.ts",
         "testingType": "component",
         "skipServe": true,
-        "devServerTarget": "jest-cypress-coverage:build"
+        "devServerTarget": "jest-cypress-coverage:build:coverage"
       }
     }
   }
