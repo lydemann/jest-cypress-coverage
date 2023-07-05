@@ -27,9 +27,9 @@ node_modules
 # misc
 /.sass-cache
 /connect.lock
-/coverage
 /combined-coverage
 /reports
+**/coverage
 **/.nyc_output
 /libpeerconnection.log
 npm-debug.log
